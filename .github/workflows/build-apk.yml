@@ -33,6 +33,28 @@ jobs:
           pip install --upgrade pip
           pip install buildozer cython
 
+      - name: Fix libtool LT_SYS_SYMBOL_USCORE for libffi
+        run: |
+          # Ubuntu 24.04 has libtool 2.4.7+ which removed LT_SYS_SYMBOL_USCORE.
+          # libffi (built by python-for-android) uses this macro in configure.ac.
+          # Provide it via a compatibility shim.
+          sudo install -d /usr/share/aclocal
+          sudo tee /usr/share/aclocal/lt-sys-symbol-uscore.m4 << 'EOF'
+          AC_DEFUN([LT_SYS_SYMBOL_USCORE],
+          [m4_require([_LT_CMD_GLOBAL_SYMBOLS])dnl
+          AC_CACHE_CHECK([whether the linker supports symbol underscore],
+          [lt_cv_sys_symbol_underscore],
+          [lt_cv_sys_symbol_underscore=no
+          save_CFLAGS=$CFLAGS
+          AC_COMPILE_IFELSE(
+            [AC_LANG_SOURCE([int dont_use_me=0;])],
+            [AS_IF([$NM $CFLAGS $CPPFLAGS conftest.$ac_objext | grep ' _dollar_underscore' > /dev/null 2>&1],
+              [lt_cv_sys_symbol_underscore=yes])])
+          CFLAGS=$save_CFLAGS])
+          AS_IF([test "x$lt_cv_sys_symbol_underscore" = xyes], [$1])
+          ])
+          EOF
+
       - name: Build APK
         working-directory: ./android
         run: |
