@@ -523,15 +523,15 @@ class ResultScreen(MDScreen):
             row = MDBoxLayout(orientation='horizontal', size_hint_y=None, height=dp(40),
                               padding=[dp(8), 0, dp(8), 0], spacing=dp(4))
             defs = word.get('def_sc', '')
-            row.add_widget(MDLabel text=f'{icon}', font_size=sp(14), size_hint_x=.08)
-            row.add_widget(MDLabel text=f'[{q["label"]}]', font_size=sp(11),
-                          theme_text_color='Primary', size_hint_x=.15)
-            row.add_widget(MDLabel text=word.get('kanji', '') or '', font_size=sp(14),
-                          bold=True, size_hint_x=.2)
-            row.add_widget(MDLabel text=word.get('furigana', '') or '', font_size=sp(12),
-                          theme_text_color='Primary', size_hint_x=.25)
-            row.add_widget(MDLabel text=defs, font_size=sp(12),
-                          theme_text_color='Secondary', size_hint_x=.32)
+            row.add_widget(MDLabel(text=f'{icon}', font_size=sp(14), size_hint_x=.08))
+            row.add_widget(MDLabel(text=f'[{q["label"]}]', font_size=sp(11),
+                          theme_text_color='Primary', size_hint_x=.15))
+            row.add_widget(MDLabel(text=word.get('kanji', '') or '', font_size=sp(14),
+                          bold=True, size_hint_x=.2))
+            row.add_widget(MDLabel(text=word.get('furigana', '') or '', font_size=sp(12),
+                          theme_text_color='Primary', size_hint_x=.25))
+            row.add_widget(MDLabel(text=defs, font_size=sp(12),
+                          theme_text_color='Secondary', size_hint_x=.32))
             self.ids.result_list.add_widget(row)
 
 

@@ -25,7 +25,7 @@ jobs:
             libssl-dev libffi-dev \
             build-essential git zip unzip \
             openjdk-17-jdk \
-            autoconf libtool pkg-config \
+            autoconf autoconf-archive libtool libtool-bin pkgconf \
             ccache
 
       - name: Install buildozer
