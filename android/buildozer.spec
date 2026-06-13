@@ -15,7 +15,7 @@ version = 1.0.0
 # version.filename = %(source.dir)s/main.py
 
 # ── 依赖 ──
-requirements = python3==3.11.9,kivy==2.3.0,kivymd==1.2.0,plyer
+requirements = python3,kivy==2.3.1,kivymd==1.2.0,plyer
 
 # ── 权限 ──
 android.permissions = INTERNET
