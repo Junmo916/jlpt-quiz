@@ -62,7 +62,7 @@ jobs:
         run: |
           # Ubuntu 22.04 自带 Java 11，openjdk-17-jdk 装到不同路径
           # 设置 JAVA_HOME 让 Gradle 找到 Java 17
-          echo "JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64" >> "$GITHUB_ENV"
+          echo "JAVA_HOME=/usr/lib/jvm/temurin-17-jdk-amd64" >> "$GITHUB_ENV"
           sudo update-java-alternatives -s java-1.17.0-openjdk-amd64 2>/dev/null || true
 
       - name: Build APK
