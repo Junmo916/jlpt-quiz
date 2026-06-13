@@ -28,12 +28,13 @@ jobs:
             autoconf autoconf-archive libtool libtool-bin pkgconf \
             ccache
 
-      - name: Install buildozer
+      - name: Install buildozer & python-for-android
         run: |
           pip install --upgrade pip setuptools wheel
-          # Install Cython first (buildozer needs it), then buildozer from git master
+          # Install Cython first, then buildozer+p4a from git master
           pip install cython
           pip install git+https://github.com/kivy/buildozer.git
+          pip install git+https://github.com/kivy/python-for-android.git
 
       - name: Fix libtool LT_SYS_SYMBOL_USCORE for libffi
         run: |
