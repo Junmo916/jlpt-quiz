@@ -26,7 +26,7 @@ android.minapi = 21
 # android.sdk 已废弃，由 buildozer 自动管理
 # android.ndk 已废弃，由 p4a 自动管理（当前推荐: 28c）
 android.accept_sdk_license = True
-# android.gradle_dependencies = 
+android.gradle_dependencies = androidx.appcompat:appcompat:1.6.1,com.google.android.material:material:1.9.0
 android.java_source = 17
 android.java_target = 17
 android.archs = arm64-v8a
