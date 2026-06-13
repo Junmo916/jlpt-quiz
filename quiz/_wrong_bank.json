@@ -1,0 +1,238 @@
+{
+  "N5": [
+    {
+      "kanji": "十",
+      "furigana": "じゅう",
+      "def_sc": "十",
+      "def_tc": "十",
+      "pos": "名",
+      "pitch": "①",
+      "plus": "",
+      "sentences": [
+        {
+          "kanji": "一・二・三・四・五・六・七・八・九・十",
+          "furigana": "一[いち]・ 二[に]・ 三[さん]・ 四[よん]・ 五[ご]・ 六[ろく]・ 七[なな]・ 八[はち]・ 九[きゅう]・ 十[じゅう]",
+          "def_sc": "数字1〜10的叫法",
+          "def_tc": "數字1〜10的叫法"
+        }
+      ],
+      "wrong_count": 1
+    },
+    {
+      "kanji": "自分",
+      "furigana": "じぶん",
+      "def_sc": "自己；我",
+      "def_tc": "自己；我",
+      "pos": "名・代",
+      "pitch": "⓪",
+      "plus": "",
+      "sentences": [
+        {
+          "kanji": "宿題は自分でやりなさい",
+          "furigana": "宿題[しゅくだい]は<b> 自分[じぶん]</b>でやりなさい",
+          "def_sc": "作业要自己写",
+          "def_tc": "作業要自己寫"
+        },
+        {
+          "kanji": "自分もそう思います",
+          "furigana": "<b> 自分[じぶん]</b>もそう 思[おも]います",
+          "def_sc": "我也这么觉得",
+          "def_tc": "我也這麼認為"
+        },
+        {
+          "kanji": "他人",
+          "furigana": "他人[たにん]",
+          "def_sc": "别人，他人",
+          "def_tc": "別人，他人"
+        }
+      ],
+      "wrong_count": 1
+    },
+    {
+      "kanji": "おはよう",
+      "furigana": "おはよう",
+      "def_sc": "早上好",
+      "def_tc": "早安",
+      "pos": "感",
+      "pitch": "⓪",
+      "plus": "",
+      "sentences": [
+        {
+          "kanji": "おはようございます",
+          "furigana": "<b>おはよう</b>ございます",
+          "def_sc": "（礼貌的说法）早上好",
+          "def_tc": "（禮貌的說法）早安"
+        }
+      ],
+      "wrong_count": 1
+    },
+    {
+      "kanji": "一人",
+      "furigana": "ひとり",
+      "def_sc": "一个人；独自",
+      "def_tc": "一個人；獨自",
+      "pos": "名",
+      "pitch": "②",
+      "plus": "",
+      "sentences": [
+        {
+          "kanji": "そこには私一人しかいなかった",
+          "furigana": "そこには 私[わたし]<b> 一人[ひとり]</b>しかいなかった",
+          "def_sc": "那里只有我一个人",
+          "def_tc": "那裡只有我一個人"
+        },
+        {
+          "kanji": "一人で映画を見に行く",
+          "furigana": "<b> 一人[ひとり]</b>で 映画[えいが]を 見[み]に 行[い]く",
+          "def_sc": "一个人去看电影",
+          "def_tc": "一個人去看電影"
+        }
+      ],
+      "wrong_count": 1
+    },
+    {
+      "kanji": "先週",
+      "furigana": "せんしゅう",
+      "def_sc": "上周",
+      "def_tc": "上週",
+      "pos": "名",
+      "pitch": "⓪",
+      "plus": "",
+      "sentences": [
+        {
+          "kanji": "先週は海に行った",
+          "furigana": "<b> 先週[せんしゅう]</b>は 海[うみ]に 行[い]った",
+          "def_sc": "上周去了海边",
+          "def_tc": "上週去了海邊"
+        },
+        {
+          "kanji": "来週",
+          "furigana": "来週[らいしゅう]",
+          "def_sc": "下周",
+          "def_tc": "下週"
+        }
+      ],
+      "wrong_count": 1
+    },
+    {
+      "kanji": "ジュース",
+      "furigana": "juice",
+      "def_sc": "果汁",
+      "def_tc": "果汁",
+      "pos": "名",
+      "pitch": "①",
+      "plus": "",
+      "sentences": [
+        {
+          "kanji": "オレンジジュース",
+          "furigana": "オレンジ<b>ジュース</b>",
+          "def_sc": "橙汁",
+          "def_tc": "橙汁"
+        },
+        {
+          "kanji": "このジュースは甘すぎる",
+          "furigana": "この<b>ジュース</b>は 甘[あま]すぎる",
+          "def_sc": "这果汁太甜了",
+          "def_tc": "這果汁太甜了"
+        }
+      ],
+      "wrong_count": 1
+    },
+    {
+      "kanji": "親",
+      "furigana": "おや",
+      "def_sc": "父母",
+      "def_tc": "父母",
+      "pos": "名",
+      "pitch": "②",
+      "plus": "",
+      "sentences": [
+        {
+          "kanji": "親を失う",
+          "furigana": "<b>親[おや]</b>を 失[うしな]う",
+          "def_sc": "失去双亲",
+          "def_tc": "失去雙親"
+        },
+        {
+          "kanji": "子",
+          "furigana": "子[こ]",
+          "def_sc": "孩子；小孩",
+          "def_tc": "孩子；小孩"
+        }
+      ],
+      "wrong_count": 1
+    },
+    {
+      "kanji": "ごめんなさい",
+      "furigana": "ごめんなさい",
+      "def_sc": "对不起，抱歉",
+      "def_tc": "對不起，抱歉",
+      "pos": "連語",
+      "pitch": "⑤",
+      "plus": "",
+      "sentences": [
+        {
+          "kanji": "遅くなってごめんなさい",
+          "furigana": "遅[おそ]くなって<b>ごめんなさい</b>",
+          "def_sc": "对不起，我迟到了",
+          "def_tc": "對不起，我遲到了"
+        }
+      ],
+      "wrong_count": 1
+    },
+    {
+      "kanji": "留学",
+      "furigana": "りゅうがく",
+      "def_sc": "留学",
+      "def_tc": "留學",
+      "pos": "名・自動3",
+      "pitch": "⓪",
+      "plus": "",
+      "sentences": [
+        {
+          "kanji": "フランスに留学する",
+          "furigana": "フランスに <b>留学[りゅうがく]</b>する",
+          "def_sc": "在法国留学",
+          "def_tc": "在法國留學"
+        }
+      ],
+      "wrong_count": 1
+    },
+    {
+      "kanji": "降りる",
+      "furigana": "おりる",
+      "def_sc": "下降；下（车）",
+      "def_tc": "下降；下（車）",
+      "pos": "自動2",
+      "pitch": "②",
+      "plus": "",
+      "sentences": [
+        {
+          "kanji": "電車を降りる",
+          "furigana": "電車[でんしゃ]を <b>降[お]りる</b>",
+          "def_sc": "下电车",
+          "def_tc": "下電車"
+        },
+        {
+          "kanji": "上がる・登る",
+          "furigana": "上[あ]がる・ 登[のぼ]る",
+          "def_sc": "登上；上升，提高",
+          "def_tc": "登上；上升，提高"
+        },
+        {
+          "kanji": "乗る",
+          "furigana": "乗[の]る",
+          "def_sc": "乘，坐；上",
+          "def_tc": "乘，坐；上"
+        },
+        {
+          "kanji": "下ろす・降ろす",
+          "furigana": "下[お]ろす・ 降[お]ろす",
+          "def_sc": "［他動］使人下来；取下；卸下",
+          "def_tc": "［他動］使人下來；取下；卸下"
+        }
+      ],
+      "wrong_count": 1
+    }
+  ]
+}

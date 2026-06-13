@@ -1,0 +1,122 @@
+{
+  "N5:十:じゅう": {
+    "level": "N5",
+    "kanji": "十",
+    "furigana": "じゅう",
+    "ease_factor": 1.42,
+    "interval": 1,
+    "repetitions": 0,
+    "next_review": "2026-06-14",
+    "last_reviewed": "2026-06-13",
+    "total_correct": 0,
+    "total_wrong": 1
+  },
+  "N5:自分:じぶん": {
+    "level": "N5",
+    "kanji": "自分",
+    "furigana": "じぶん",
+    "ease_factor": 1.42,
+    "interval": 1,
+    "repetitions": 0,
+    "next_review": "2026-06-14",
+    "last_reviewed": "2026-06-13",
+    "total_correct": 0,
+    "total_wrong": 1
+  },
+  "N5:おはよう:おはよう": {
+    "level": "N5",
+    "kanji": "おはよう",
+    "furigana": "おはよう",
+    "ease_factor": 1.42,
+    "interval": 1,
+    "repetitions": 0,
+    "next_review": "2026-06-14",
+    "last_reviewed": "2026-06-13",
+    "total_correct": 0,
+    "total_wrong": 1
+  },
+  "N5:一人:ひとり": {
+    "level": "N5",
+    "kanji": "一人",
+    "furigana": "ひとり",
+    "ease_factor": 1.42,
+    "interval": 1,
+    "repetitions": 0,
+    "next_review": "2026-06-14",
+    "last_reviewed": "2026-06-13",
+    "total_correct": 0,
+    "total_wrong": 1
+  },
+  "N5:先週:せんしゅう": {
+    "level": "N5",
+    "kanji": "先週",
+    "furigana": "せんしゅう",
+    "ease_factor": 1.42,
+    "interval": 1,
+    "repetitions": 0,
+    "next_review": "2026-06-14",
+    "last_reviewed": "2026-06-13",
+    "total_correct": 0,
+    "total_wrong": 1
+  },
+  "N5:ジュース:juice": {
+    "level": "N5",
+    "kanji": "ジュース",
+    "furigana": "juice",
+    "ease_factor": 1.42,
+    "interval": 1,
+    "repetitions": 0,
+    "next_review": "2026-06-14",
+    "last_reviewed": "2026-06-13",
+    "total_correct": 0,
+    "total_wrong": 1
+  },
+  "N5:親:おや": {
+    "level": "N5",
+    "kanji": "親",
+    "furigana": "おや",
+    "ease_factor": 1.42,
+    "interval": 1,
+    "repetitions": 0,
+    "next_review": "2026-06-14",
+    "last_reviewed": "2026-06-13",
+    "total_correct": 0,
+    "total_wrong": 1
+  },
+  "N5:ごめんなさい:ごめんなさい": {
+    "level": "N5",
+    "kanji": "ごめんなさい",
+    "furigana": "ごめんなさい",
+    "ease_factor": 1.42,
+    "interval": 1,
+    "repetitions": 0,
+    "next_review": "2026-06-14",
+    "last_reviewed": "2026-06-13",
+    "total_correct": 0,
+    "total_wrong": 1
+  },
+  "N5:留学:りゅうがく": {
+    "level": "N5",
+    "kanji": "留学",
+    "furigana": "りゅうがく",
+    "ease_factor": 1.42,
+    "interval": 1,
+    "repetitions": 0,
+    "next_review": "2026-06-14",
+    "last_reviewed": "2026-06-13",
+    "total_correct": 0,
+    "total_wrong": 1
+  },
+  "N5:降りる:おりる": {
+    "level": "N5",
+    "kanji": "降りる",
+    "furigana": "おりる",
+    "ease_factor": 1.42,
+    "interval": 1,
+    "repetitions": 0,
+    "next_review": "2026-06-14",
+    "last_reviewed": "2026-06-13",
+    "total_correct": 0,
+    "total_wrong": 1
+  }
+}

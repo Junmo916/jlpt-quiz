@@ -1,0 +1,18 @@
+{
+  "days": {
+    "2026-06-13": {
+      "total": 10,
+      "correct": 0,
+      "incorrect": 10
+    }
+  },
+  "by_level": {
+    "N5": {
+      "total": 10,
+      "correct": 0,
+      "incorrect": 10
+    }
+  },
+  "streak": 1,
+  "last_active": "2026-06-13"
+}
