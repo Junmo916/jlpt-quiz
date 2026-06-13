@@ -15,7 +15,7 @@ version = 1.0.0
 # version.filename = %(source.dir)s/main.py
 
 # ── 依赖 ──
-requirements = python3,kivy==2.3.0,kivymd==2.0.1,plyer
+requirements = python3,kivy==2.3.0,https://github.com/kivymd/KivyMD/archive/master.zip,plyer
 
 # ── 权限 ──
 android.permissions = INTERNET
@@ -23,8 +23,8 @@ android.permissions = INTERNET
 # ── Android 配置 ──
 android.api = 34
 android.minapi = 21
-android.sdk = 34
-android.ndk = 25.1.8937393
+# android.sdk 已废弃，由 buildozer 自动管理
+# android.ndk 已废弃，由 p4a 自动管理（当前推荐: 28c）
 android.accept_sdk_license = True
 android.gradle_dependencies = 
 android.java_source = 17
