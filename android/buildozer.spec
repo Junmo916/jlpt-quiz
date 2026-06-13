@@ -10,8 +10,9 @@ source.include_patterns = data/*.json
 
 # ── 版本 ──
 version = 1.0.0
-version.regex = __version__ = ['"](.*)['"]
-version.filename = %(source.dir)s/main.py
+# version.regex 和 version 不能同时使用，这里用硬编码版本
+# version.regex = __version__ = ['"](.*)['"]
+# version.filename = %(source.dir)s/main.py
 
 # ── 依赖 ──
 requirements = python3,kivy==2.3.0,kivymd==2.0.1,plyer
