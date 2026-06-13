@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+*.egg
+dist/
+build/
+
+# Build artifacts
+android/bin/
+android/.buildozer/
+*.log
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Data
+quiz/_progress.json
+quiz/_srs_data.json
+quiz/_stats.json
+quiz/_wrong_bank.json

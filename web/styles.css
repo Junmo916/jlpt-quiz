@@ -1,0 +1,475 @@
+/* =====================================================
+   日文背词 — JLPT 10k 移动端 PWA 样式
+   ===================================================== */
+
+:root {
+  --bg: #f2ebe1;
+  --card-bg: #faf6ef;
+  --primary: #b87a4a;
+  --correct: #5a8a5a;
+  --wrong: #b85c4a;
+  --text: #4a3728;
+  --text-sec: #8b7355;
+  --border: #d4c5a9;
+  --radius: 12px;
+  --shadow: 0 2px 8px rgba(74, 55, 40, 0.08);
+  --font-jp: 'Noto Serif CJK SC', 'Source Han Serif SC', serif;
+  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { height: 100%; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  height: 100%;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+/* ── App Shell ───────────────────────── */
+#app-root {
+  display: none;
+  flex-direction: column;
+  height: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.screen {
+  display: none;
+  flex: 1;
+  flex-direction: column;
+  overflow-y: auto;
+  padding: 0 16px;
+  -webkit-overflow-scrolling: touch;
+}
+.screen.active { display: flex; }
+
+/* ── Loading ─────────────────────────── */
+#app-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  flex-direction: column;
+  gap: 16px;
+  color: var(--primary);
+}
+.spinner {
+  width: 40px; height: 40px;
+  border: 3px solid var(--border);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Header ──────────────────────────── */
+.app-header {
+  text-align: center;
+  padding: 24px 0 4px;
+  flex-shrink: 0;
+}
+.app-header h1 {
+  font-family: var(--font-jp);
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--text);
+}
+.app-header p {
+  font-size: 13px;
+  color: var(--text-sec);
+}
+
+/* ── Cards ───────────────────────────── */
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  padding: 16px 20px;
+  margin-bottom: 12px;
+  box-shadow: var(--shadow);
+}
+
+/* ── Level Selection ─────────────────── */
+.level-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 15px;
+  cursor: pointer;
+  min-height: 48px;
+}
+.level-item:last-child { border-bottom: none; }
+.level-item input[type="checkbox"] {
+  width: 20px; height: 20px;
+  margin-right: 12px;
+  accent-color: var(--primary);
+  flex-shrink: 0;
+}
+
+.level-item button {
+  margin-left: auto;
+  font-size: 12px;
+  padding: 4px 10px;
+}
+
+/* ── Buttons ─────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: var(--font-body);
+  background: var(--card-bg);
+  color: var(--primary);
+  cursor: pointer;
+  min-height: 48px;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
+}
+.btn:active { opacity: 0.8; }
+.btn:disabled { opacity: 0.4; pointer-events: none; }
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  border: none;
+  font-weight: bold;
+  padding: 14px 32px;
+}
+.btn-sm {
+  padding: 6px 14px;
+  font-size: 13px;
+  min-height: 32px;
+}
+.btn-danger {
+  background: var(--wrong);
+  color: white;
+  border: none;
+  font-weight: bold;
+}
+
+.btn-row {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  padding: 8px 0 16px;
+  flex-wrap: wrap;
+}
+.btn-row .btn { flex: 1; min-width: 100px; }
+
+/* ── Info Text ───────────────────────── */
+.info-text {
+  font-size: 13px;
+  color: var(--text-sec);
+  text-align: center;
+  padding: 6px 0;
+}
+.srs-summary {
+  font-size: 12px;
+  color: var(--primary);
+  text-align: center;
+  padding: 2px 0 8px;
+}
+
+/* ── Progress Snackbar ───────────────── */
+.progress-snack {
+  display: none;
+  align-items: center;
+  gap: 10px;
+  background: var(--card-bg);
+  border: 1px solid var(--primary);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  box-shadow: var(--shadow);
+}
+.progress-snack .btn-sm { flex-shrink: 0; }
+
+/* ── Quiz Screen ─────────────────────── */
+.quiz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  font-size: 13px;
+  color: var(--text-sec);
+  flex-shrink: 0;
+}
+.quiz-header .qtype { color: var(--primary); font-weight: bold; }
+.quiz-header .score { text-align: right; }
+
+.progress-track {
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  margin: 4px 0 12px;
+  flex-shrink: 0;
+}
+.progress-track .bar {
+  height: 100%;
+  background: var(--primary);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.word-display {
+  text-align: center;
+  padding: 20px 0 8px;
+}
+.word-display .furigana {
+  font-size: 16px;
+  color: var(--primary);
+  min-height: 24px;
+}
+.word-display .kanji {
+  font-size: 32px;
+  font-weight: bold;
+  font-family: var(--font-jp);
+  line-height: 1.3;
+}
+.word-display .def-display {
+  font-size: 22px;
+  font-family: var(--font-jp);
+  padding: 12px 0;
+  line-height: 1.5;
+}
+.word-display .pos {
+  font-size: 13px;
+  color: var(--text-sec);
+  margin-top: 4px;
+}
+
+.pronounce-btn {
+  display: inline-block;
+  font-size: 22px;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  width: 44px; height: 44px;
+  cursor: pointer;
+  margin-top: 8px;
+  touch-action: manipulation;
+}
+.pronounce-btn:active { background: var(--border); }
+
+/* ── Input ───────────────────────────── */
+.input-area {
+  padding: 8px 0;
+}
+.input-area label {
+  display: block;
+  font-size: 12px;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.input-area input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 18px;
+  font-family: var(--font-jp);
+  text-align: center;
+  background: white;
+  outline: none;
+  transition: border-color 0.2s;
+  -webkit-appearance: none;
+}
+.input-area input:focus {
+  border-color: var(--primary);
+}
+.input-area input:disabled {
+  background: #f5f0e8;
+  color: var(--text-sec);
+}
+.input-area .input-group {
+  margin-bottom: 8px;
+}
+
+/* ── Feedback ────────────────────────── */
+#feedback {
+  padding: 8px 0;
+}
+.fb-icon { font-size: 28px; text-align: center; }
+.fb-answer {
+  font-size: 18px;
+  font-family: var(--font-jp);
+  text-align: center;
+  padding: 4px 0;
+}
+.fb-srs {
+  font-size: 12px;
+  color: var(--text-sec);
+  text-align: center;
+  padding: 2px 0;
+}
+.fb-plus {
+  font-size: 13px;
+  color: #8e8e93;
+  padding: 4px 0;
+}
+.sent-title {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 8px;
+}
+.sent-item {
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 4px 0;
+  font-family: var(--font-jp);
+}
+.sent-def {
+  font-size: 13px;
+  color: var(--text-sec);
+}
+
+/* ── Result ──────────────────────────── */
+.result-pct {
+  font-size: 56px;
+  font-weight: bold;
+  text-align: center;
+  color: var(--primary);
+  padding: 8px 0;
+}
+.result-detail {
+  font-size: 14px;
+  text-align: center;
+  color: var(--text-sec);
+  padding: 4px 0 12px;
+  line-height: 1.6;
+}
+.result-list {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.result-row {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+  gap: 6px;
+  min-height: 40px;
+  flex-wrap: wrap;
+}
+.result-row:last-child { border-bottom: none; }
+.r-icon { flex-shrink: 0; width: 24px; text-align: center; }
+.r-type { flex-shrink: 0; width: 60px; color: var(--primary); font-size: 11px; }
+.r-kanji { font-weight: bold; min-width: 60px; font-family: var(--font-jp); }
+.r-furi { color: var(--primary); min-width: 80px; font-size: 12px; }
+.r-def { color: var(--text-sec); font-size: 12px; flex: 1; }
+
+/* ── Wrong Bank ──────────────────────── */
+.wb-level-select { margin-bottom: 12px; }
+.empty-state {
+  text-align: center;
+  padding: 40px 0;
+  font-size: 16px;
+  color: var(--text-sec);
+}
+
+.confirm-dialog {
+  text-align: center;
+  padding: 24px 0;
+}
+
+/* ── Bottom Nav ──────────────────────── */
+.bottom-nav {
+  display: flex;
+  background: var(--card-bg);
+  border-top: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.bottom-nav button {
+  flex: 1;
+  padding: 12px 8px;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  color: var(--text-sec);
+  cursor: pointer;
+  min-height: 48px;
+  touch-action: manipulation;
+}
+.bottom-nav button.active {
+  color: var(--primary);
+  font-weight: bold;
+  border-top: 2px solid var(--primary);
+}
+.bottom-nav button:active { background: var(--border); }
+
+/* ── Count Selector ──────────────────── */
+.count-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+}
+.count-row select {
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 15px;
+  background: white;
+  color: var(--text);
+}
+
+/* ── Scroll ──────────────────────────── */
+.screen-content {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 8px;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ── Status bar spacing (iOS) ────────── */
+@supports (padding-top: env(safe-area-inset-top)) {
+  .app-header { padding-top: calc(24px + env(safe-area-inset-top)); }
+  .bottom-nav { padding-bottom: env(safe-area-inset-bottom); }
+}
+
+/* ── Dark mode ───────────────────────── */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1a1a1a;
+    --card-bg: #2a2a2a;
+    --text: #e8e0d0;
+    --text-sec: #a09080;
+    --border: #3a3a3a;
+    --shadow: 0 2px 8px rgba(0,0,0,0.3);
+    --primary: #d4a574;
+    --correct: #7ab07a;
+    --wrong: #d47a6a;
+  }
+  .input-area input {
+    background: #333;
+    color: var(--text);
+  }
+  .input-area input:disabled { background: #2a2a2a; }
+}
+
+/* ── Desktop friendly ────────────────── */
+@media (min-width: 768px) {
+  body { background: #e0d8c8; }
+  #app-root {
+    box-shadow: 0 0 40px rgba(0,0,0,0.1);
+    border-left: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+  }
+}
