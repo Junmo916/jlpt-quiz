@@ -31,8 +31,9 @@ jobs:
       - name: Install buildozer
         run: |
           pip install --upgrade pip setuptools wheel
-          # Use buildozer from git master for latest p4a fixes
-          pip install git+https://github.com/kivy/buildozer.git cython==3.0.12
+          # Install Cython first (buildozer needs it), then buildozer from git master
+          pip install cython
+          pip install git+https://github.com/kivy/buildozer.git
 
       - name: Fix libtool LT_SYS_SYMBOL_USCORE for libffi
         run: |
